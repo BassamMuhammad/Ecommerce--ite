@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <nav class="nav">
+          <a href="#" class="hamburger-link">
+            <img
+              src="images/hamburger.svg"
+              alt="hamburger icon"
+              class="hamburger"
+            />
+          </a>
+          <a class="logo" href="index.html">FastCommerce</a>
+          <form action="" class="search-form">
+            <div class="search-field">
+              <input
+                type="text"
+                placeholder="search products"
+                name="product_name"
+                required
+              />
+              <button class="submit-btn" type="submit"></button>
+            </div>
+            <div>
+              <label for="category">Category</label>
+              <select name="category" id="category">
+                <option value="All">All</option>
+                <option value="Home & Kitchen">Home & Kitchen</option>
+                <option value="Sports">Sports</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Softwares">Softwares</option>
+                <option value="Video Games">Video Games</option>
+                <option value="Books">Books</option>
+              </select>
+            </div>
+          </form>
+
+          <div class="nav__links">
+            <a href="cart.html" class="shopping-cart-link">
+              <img
+                src="images/shopping-cart.svg"
+                alt="shopping cart"
+                class="shopping-cart"
+              />
+            </a>
+            <a href="#" class="down-arrow-link">
+              <img
+                src="images/down-arrow.svg"
+                alt="down arrow"
+                class="down-arrow"
+              />
+            </a>
+          </div>
+        </nav>
+        <section class="secondary-links secondary-links--hidden">
+          <div class="secondary-links__flex">
+            <div class="temp-hidden-links">
+              <a class="logo" href="index.html">FastCommerce</a>
+
+              <a href="cart.html" class="shopping-cart-link">
+                <span> Cart</span>
+                <img
+                  src="images/shopping-cart.svg"
+                  alt="shopping cart"
+                  class="shopping-cart"
+                />
+              </a>
+            </div>
+            <div class="secondary-links__list">
+              <a href="accountSettings.html">Account Settings</a>
+              <a href="favourites.html">Favorites</a>
+              <a href="history.html">History</a>
+              <a href="">Return Policy</a>
+              <a href="faq.html">FAQ</a>
+              <a href="">About Us</a>
+              <a href="">Contact</a>
+              <a href="">Privacy Policy</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <main>
+        <div class="products-list">
+          <div href="#" class="product" tabindex="1" id="1">
+            <div class="product__image">
+              <img
+                src="images/products/sports/racket.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Sports Racket</p>
+              <p class="product__price">$23</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1" id="2">
+            <div class="product__image">
+              <img
+                src="images/products/sports/baseball-bat.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Baseball Bat</p>
+              <p class="product__price">$21</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1" id="3">
+            <div class="product__image">
+              <img
+                src="images/products/home&kitchen/sofa.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Soft Grey Sofa</p>
+              <p class="product__price">$119</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1">
+            <div class="product__image">
+              <img
+                src="images/products/sports/racket.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Sports Racket</p>
+              <p class="product__price">$23</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1">
+            <div class="product__image">
+              <img
+                src="images/products/sports/baseball-bat.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Baseball Bat</p>
+              <p class="product__price">$21</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1">
+            <div class="product__image">
+              <img
+                src="images/products/home&kitchen/sofa.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Soft Grey Sofa</p>
+              <p class="product__price">$119</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1">
+            <div class="product__image">
+              <img
+                src="images/products/sports/racket.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Sports Racket</p>
+              <p class="product__price">$23</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1">
+            <div class="product__image">
+              <img
+                src="images/products/sports/baseball-bat.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Baseball Bat</p>
+              <p class="product__price">$21</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+          <div href="#" class="product" tabindex="1">
+            <div class="product__image">
+              <img
+                src="images/products/home&kitchen/sofa.jpg"
+                alt="product image"
+              />
+            </div>
+            <div class="product__details">
+              <p class="product__name">Soft Grey Sofa</p>
+              <p class="product__price">$119</p>
+              <a href="#" class="add-to-favourites-btn">Add to Favourites</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="wrapper footer-grid">
+        <a class="logo" href="index.html">FastCommerce</a>
+        <ul class="footer-links-list">
+          <li><a class="footer-link" href="#">Return Policy</a></li>
+          <li><a class="footer-link" href="faq.html">FAQ</a></li>
+          <li><a class="footer-link" href="#">About Us</a></li>
+          <li><a class="footer-link" href="#">Contact</a></li>
+          <li><a class="footer-link" href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/header.js"></script>
+  </body>
+</html>

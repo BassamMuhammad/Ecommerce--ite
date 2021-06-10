@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Signin</title>
+  </head>
+  <body>
+    <section class="signup-form-wrapper">
+      <h1>Signin</h1>
+      <form class="signin-form">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required/>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" minlength="5" required/>
+        </div>
+        <button type="submit" class="submit-btn"> Signin</button>
+      </form>
+      <p class="signup-para">
+        Do not have an account? <a href="signup.html">Create an account</a>.
+      </p>
+    </section>
+  </body>
+</html>
