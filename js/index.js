@@ -1,5 +1,5 @@
 const openProductPage = function (event) {
-  window.location = `/productDetails.html?id=${event.target.id}`;
+  window.location = `productDetails.html?id=${event.target.id}`;
 };
 
 Array.from(document.querySelectorAll('.products-list .product')).forEach(
