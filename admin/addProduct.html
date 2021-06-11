@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Add Product</title>
+  </head>
+  <body>
+    <header class="minimalist-header">
+      <div class="wrapper">
+        <a href="admin.html" class="home-btn">Back to Home</a>
+      </div>
+    </header>
+    <div class="wrapper wrapper-address-page">
+      <main>
+        <section class="add-product-section">
+          <h1 class="product-form-h">Add Product Details</h1>
+          <form action="" class="admin-product-form add-product-form">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+
+            <div>
+              <label for="category">Category</label>
+              <select name="category" id="category">
+                <option value="All">All</option>
+                <option value="Home & Kitchen">Home & Kitchen</option>
+                <option value="Sports">Sports</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Softwares">Softwares</option>
+                <option value="Video Games">Video Games</option>
+                <option value="Books">Books</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="image">Image</label>
+              <input type="file" name="image" id="image" required />
+            </div>
+            <div>
+              <label for="price">Price</label>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                required
+                placeholder="In dollars"
+              />
+            </div>
+
+            <div>
+              <label for="quantity">Quantity</label>
+              <input type="number" name="quantity" id="quantity" required />
+            </div>
+
+            <div>
+              <label for="description">Description</label>
+              <textarea
+                name="description"
+                id="description"
+                rows="10"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="wrapper footer-grid">
+        <a class="logo" href="admin.html">FastCommerce</a>
+        <ul class="footer-links-list">
+          <li><a class="footer-link" href="#">Return Policy</a></li>
+          <li><a class="footer-link" href="#">About Us</a></li>
+          <li><a class="footer-link" href="#">Contact</a></li>
+          <li><a class="footer-link" href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

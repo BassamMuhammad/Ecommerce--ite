@@ -16,75 +16,75 @@
     <header class="minimalist-header">
       <div class="wrapper">
         <a href="index.html" class="home-btn">Back to Home</a>
-        <a class="logo" href="index.html">FastCommerce</a>
       </div>
     </header>
 
-    <main class="account-settings-main">
-      <section class="edit-account-section">
-        <form class="edit-account-form" id="no-password-form">
-          <button type="button" class="edit-btn">Edit</button>
-          <div>
-            <label for="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value="Rohail Taha"
+    <div class="wrapper">
+      <main class="account-settings-main">
+        <section class="edit-account-section">
+          <form class="edit-account-form" id="no-password-form">
+            <button type="button" class="edit-btn">Edit</button>
+            <div>
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                value="Rohail Taha"
+                disabled
+              />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value="random@gmail.com"
+                disabled
+              />
+            </div>
+            <button
+              type="submit"
+              class="submit-btn submit-btn--disabled"
               disabled
-            />
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value="random@gmail.com"
-              disabled
-            />
-          </div>
-          <button
-            type="submit"
-            class="submit-btn submit-btn--disabled"
-            disabled
-          >
-            Save
-          </button>
-        </form>
+            >
+              Save
+            </button>
+          </form>
 
-        <form action="" class="edit-account-form change-password-form">
-          <button type="button" class="edit-btn change-password-btn">
-            Change Password
-          </button>
-          <div>
+          <form action="" class="edit-account-form change-password-form">
+            <button type="button" class="edit-btn change-password-btn">
+              Change Password
+            </button>
+            <div>
+              <input
+                type="password"
+                name="old_password"
+                id="old_password"
+                placeholder="Enter old password"
+                disabled
+                required
+              />
+              <input
+                type="password"
+                name="new_password"
+                id="new_password"
+                placeholder="Enter new password"
+                disabled
+                required
+              />
+            </div>
             <input
-              type="password"
-              name="old_password"
-              id="old_password"
-              placeholder="Enter old password"
+              type="submit"
+              value="Change"
+              class="submit-btn submit-btn--disabled"
               disabled
-              required
             />
-            <input
-              type="password"
-              name="new_password"
-              id="new_password"
-              placeholder="Enter new password"
-              disabled
-              required
-            />
-          </div>
-          <input
-            type="submit"
-            value="Change"
-            class="submit-btn submit-btn--disabled"
-            disabled
-          />
-        </form>
-      </section>
-    </main>
-
+          </form>
+        </section>
+      </main>
+    </div>
     <footer>
       <div class="wrapper footer-grid">
         <a class="logo" href="index.html">FastCommerce</a>
