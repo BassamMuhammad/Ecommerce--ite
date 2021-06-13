@@ -13,16 +13,17 @@
     <title>Payment</title>
   </head>
   <body>
-    <header class="minimalist-header">
-      <div class="wrapper">
-        <a href="index.html" class="home-btn">Back to Home</a>
-      </div>
-    </header>
-    <div class="wrapper">
+    <div class="wrapper wrapper-payment-page">
+      <header class="minimalist-header">
+        <div class="wrapper">
+          <a href="index.php" class="home-btn">Back to Home</a>
+          <a class="logo" href="index.php">FastCommerce</a>
+        </div>
+      </header>
       <main class="payment-main">
         <section class="payment-section">
           <h1 class="payment-h">Payment Details</h1>
-          <form action="" class="payment-form">
+          <form action="payment.php" method="POST" class="payment-form">
             <div>
               <label for="card_number">Card Number</label>
               <input type="text" name="card_number" id="card_number" required />
@@ -34,7 +35,7 @@
             <div>
               <label for="expiration_date">Expiration Date</label>
               <input
-                type="month"
+                type="date"
                 name="expiration_date"
                 id="expiration_date"
                 required
@@ -47,10 +48,10 @@
     </div>
     <footer>
       <div class="wrapper footer-grid">
-        <a class="logo" href="index.html">FastCommerce</a>
+        <a class="logo" href="index.php">FastCommerce</a>
         <ul class="footer-links-list">
           <li><a class="footer-link" href="#">Return Policy</a></li>
-          <li><a class="footer-link" href="faq.html">FAQ</a></li>
+          <li><a class="footer-link" href="faq.php">FAQ</a></li>
           <li><a class="footer-link" href="#">About Us</a></li>
           <li><a class="footer-link" href="#">Contact</a></li>
           <li><a class="footer-link" href="#">Privacy Policy</a></li>
