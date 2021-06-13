@@ -59,6 +59,7 @@ $result = mysqli_query($mysqli, "SELECT * from products where id=$id");
             <a href="">About Us</a>
             <a href="">Contact</a>
             <a href="">Privacy Policy</a>
+            <a href="signout.php">Log out</a>
           </div>
         </div>
       </section>

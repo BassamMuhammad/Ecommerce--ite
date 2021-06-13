@@ -30,7 +30,7 @@ $mysqli->close();
 
                 <form action="searchProduct.php?name=" class="search-form">
                     <div class="search-field">
-                        <input type="text" placeholder="search products" name="product_name" required />
+                        <?php echo "<input type=\"text\" placeholder=\"search products\" name=\"product_name\" required value=\"" . $name . "\"/>"; ?>
                         <button class="submit-btn" type="submit"></button>
                     </div>
 
