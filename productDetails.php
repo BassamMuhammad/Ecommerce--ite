@@ -68,36 +68,37 @@ $result = mysqli_query($mysqli, "SELECT * from products where id=$id");
     <main>
       <section class="product-details">
         <?php
-        while ($res = mysqli_fetch_array($result)) {
-          echo "  <div class=\"product-details__image\">";
-          echo "    <img src=" . $res['imageUrl'] . " alt=\"product image\" />";
-          echo "  </div>";
-          echo "  <div class=\"product-details__content\">";
-          echo "    <p class=\"product-details__content__name\">" . $res['name'] . "</p>";
-          echo "    <p class=\"product-details__content__price\">$" . $res['price'] . "</p>";
-          echo "    <a href=\"addToFavourite.php?id=" . $res['id'] . "\" class=\"add-to-favourites-btn\">Add to Favourites</a>";
-          echo "  </div>";
-          echo "  <form class=\"product-details__cta-btns\">";
-          echo "    <div class=\"quantity-field\">";
-          echo "      <label for=\"qauntity\">Quantity</label>";
-          echo "      <select id=\"quantity\" name=\"quantity\">";
-          echo "        <option value=\"1\">1</option>";
-          echo "        <option value=\"2\">2</option>";
-          echo "        <option value=\"3\">3</option>";
-          echo "        <option value=\"4\">4</option>";
-          echo "      </select>";
-          echo "    </div>";
-          echo "    <a href=\"addressInfo.php\" class=\"buy-btn\">Buy</a>";
-          echo "    <a href=\"addToCart.php?id=" . $res['id'] . "\"  class=\"add-to-cart-btn\">  Add to Cart</a>";
-          echo "  </form>";
-          echo "  <div class=\"product-details__description\">";
-          echo "    <h2>Description</h2>";
-          echo "    <p>" . $res['description'] .
-            "</p>";
-          echo " </div>";
-        }
-        $mysqli->close();
-        ?>
+        while ($res = mysqli_fetch_array($result)) { ?>
+          <div class="product-details__image">
+            <img src="<?php echo $res['imageUrl'] ?>" alt="product image" />
+          </div>
+          <div class="product-details__content">
+            <p class="product-details__content__name"><?php echo $res['name'] ?></p>
+            <p class="product-details__content__price">$<?php echo $res['price'] ?></p>
+            <a href="addToFavourite.php?id=<?php echo $res['id'] ?>" class="add-to-favourites-btn">Add to Favourites</a>
+          </div>
+          <form class="product-details__cta-btns">
+            <div class="quantity-field">
+              <label for="qauntity">Quantity</label>
+              <select id="quantity" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <a href="addressInfo.php" class="buy-btn">Buy</a>
+            <a 
+             
+            id=<?php echo $res['id'] ?> class="add-to-cart-btn"> Add to Cart</a>
+          </form>
+          <div class="product-details__description">
+            <h2>Description</h2>
+            <p>
+              <?php echo $res['description'] ?>
+            </p>
+          </div>
+        <?php  } ?>
 
       </section>
     </main>
