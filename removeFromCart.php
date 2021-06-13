@@ -1,9 +1,11 @@
 <?php
+
 session_start();
-$id = $_GET["id"];
 if (isset($_SESSION['cart'])) {
-    if (($key = array_search($id, $_SESSION['cart'])) !== false) {
-        unset($_SESSION['cart'][$key]);
-    }
+
+    $_SESSION['cart'] = array_filter($_SESSION['cart'], function ($value) {
+        return $value['id'] != $_GET['id'];
+    });
 }
+
 header('Location: ' . $_SERVER['HTTP_REFERER']);

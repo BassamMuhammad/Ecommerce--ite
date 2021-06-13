@@ -18,8 +18,5 @@ function isProductInCart()
         if ($product['id'] === $_GET['id']) return true;
     }
     return false;
-    echo "<pre>" .
-        print_r($_SESSION['cart']) .
-        "</pre>";
 }
 header('Location: ' . $_SERVER['HTTP_REFERER']);
