@@ -1,5 +1,14 @@
 <?php
+session_start();
 $skip = true;
+if (!isset($_SESSION['user'])) {
+    header('Location: signin.html');
+}
+if (
+    'admin@gmail.com' !== $_SESSION['user'][1]
+) {
+    header('Location: index.php');
+}
 include_once(".\config.php");
 $name = $_GET['product_name'];
 $result = mysqli_query($mysqli, "SELECT * from products where name='$name'");
@@ -24,7 +33,7 @@ $mysqli->close();
         <div class="wrapper">
             <nav class="nav">
                 <a class="logo" href="admin.php">FastCommerce</a>
-                <form action="adminSearchProduct.php" class="search-form">
+                <form action="adminSearchProduct.html" class="search-form">
                     <div class="search-field">
                         <?php echo "<input type=\"text\" placeholder=\"search products\" name=\"product_name\" required value=\"" . $name . "\"/>"; ?>
                         <button class="submit-btn" type="submit"></button>
@@ -37,7 +46,7 @@ $mysqli->close();
     </header>
     <div class="wrapper">
         <main class="admin-main">
-            <a href="addProduct.php" class="add-product-btn">Add New Product</a>
+            <a href="addProduct.html" class="add-product-btn">Add New Product</a>
             <section class="product-details">
                 <?php
 

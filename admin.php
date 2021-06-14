@@ -1,6 +1,14 @@
 <?php
+session_start();
 include_once(".\config.php");
-
+if (!isset($_SESSION['user'])) {
+  header('Location: signin.html');
+}
+if (
+  'admin@gmail.com' !== $_SESSION['user'][1]
+) {
+  header('Location: index.php');
+}
 $result = mysqli_query($mysqli, "SELECT * from products");
 ?>
 
@@ -36,7 +44,7 @@ $result = mysqli_query($mysqli, "SELECT * from products");
 
   <div class="wrapper">
     <main class="admin-main">
-      <a href="addProduct.php" class="add-product-btn">Add New Product</a>
+      <a href="addProduct.html" class="add-product-btn">Add New Product</a>
       <ul class="products-list products-list-admin">
 
         <?php
