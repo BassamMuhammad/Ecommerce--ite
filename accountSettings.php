@@ -32,11 +32,11 @@ if (!isset($_SESSION['user'])) {
           <button type="button" class="edit-btn">Edit</button>
           <div>
             <label for="name">Name</label>
-            <?php echo " <input type=\"text\" name=\"name\" id=\"name\" value=\"" . $_SESSION['user'][0] . "\" disabled />"; ?>
+            <input type="text" name="name" id="name" value="<?php echo $_SESSION['user'][0] ?>" disabled>
           </div>
           <div>
             <label for="email">Email</label>
-            <?php echo "<input type=\"email\" name=\"email\" id=\"email\" value=\"" . $_SESSION['user'][1] . "\" disabled />"; ?>
+            <input type="email" name="email" id="email" value="<?php echo $_SESSION['user'][1] ?>" disabled />
           </div>
           <input type="submit" class="submit-btn submit-btn--disabled" value="Save" disabled />
 
