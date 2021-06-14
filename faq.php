@@ -18,8 +18,7 @@ $result = mysqli_query($mysqli, "SELECT * from faq");
 <body>
   <header class="minimalist-header">
     <div class="wrapper">
-      <a href="index.php" class="home-btn">Back to Home</a>
-      <a class="logo" href="index.php">FastCommerce</a>
+      <a href="index.html" class="home-btn">Back to Home</a>
     </div>
   </header>
 
