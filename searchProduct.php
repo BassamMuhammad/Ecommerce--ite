@@ -20,53 +20,9 @@ $mysqli->close();
 </head>
 
 <body>
-    <header class="header">
+    <header class="minimalist-header">
         <div class="wrapper">
-            <nav class="nav">
-                <a href="#" class="hamburger-link">
-                    <img src="images/hamburger.svg" alt="hamburger icon" class="hamburger" />
-                </a>
-                <a class="logo" href="index.php">FastCommerce</a>
-
-                <form action="searchProduct.php?name=" class="search-form">
-                    <div class="search-field">
-                        <?php echo "<input type=\"text\" placeholder=\"search products\" name=\"product_name\" required value=\"" . $name . "\"/>"; ?>
-                        <button class="submit-btn" type="submit"></button>
-                    </div>
-
-                </form>
-
-                <div class="nav__links">
-                    <a href="cart.php" class="shopping-cart-link">
-                        <img src="images/shopping-cart.svg" alt="shopping cart" class="shopping-cart" />
-                    </a>
-                    <a href="#" class="down-arrow-link">
-                        <img src="images/down-arrow.svg" alt="down arrow" class="down-arrow" />
-                    </a>
-                </div>
-            </nav>
-            <section class="secondary-links secondary-links--hidden">
-                <div class="secondary-links__flex">
-                    <div class="temp-hidden-links">
-                        <a class="logo" href="index.php">FastCommerce</a>
-
-                        <a href="cart.php" class="shopping-cart-link">
-                            <span> Cart</span>
-                            <img src="images/shopping-cart.svg" alt="shopping cart" class="shopping-cart" />
-                        </a>
-                    </div>
-                    <div class="secondary-links__list">
-                        <a href="accountSettings.php">Account Settings</a>
-                        <a href="favourites.php">Favorites</a>
-                        <a href="history.php">History</a>
-                        <a href="">Return Policy</a>
-                        <a href="faq.php">FAQ</a>
-                        <a href="">About Us</a>
-                        <a href="">Contact</a>
-                        <a href="">Privacy Policy</a>
-                    </div>
-                </div>
-            </section>
+            <a href="index.php" class="home-btn">Back to Home</a>
         </div>
     </header>
     <div class="wrapper">

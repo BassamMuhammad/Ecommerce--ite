@@ -36,7 +36,7 @@ $result = mysqli_query($mysqli, "SELECT * from products");
             <button class="submit-btn" type="submit"></button>
           </div>
         </form>
-        <a href="signout.php" class="signout-btn">Log out</a>
+        <a href="../signout.php" class="signout-btn">Log out</a>
 
       </nav>
     </div>

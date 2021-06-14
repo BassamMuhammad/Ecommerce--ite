@@ -8,10 +8,13 @@ while ($res = mysqli_fetch_array($result)) {
     $id = $res['id'];
 }
 
+
+
 foreach ($_SESSION['cart'] as $value) {
+    echo "<pre>" . $id . "</pre>";
     echo "<h1>1</h1>";
-    mysqli_query($mysqli, "INSERT INTO `ordered_products`(`order_id`,`product_id`) VALUES ('" . $id . "','" . $value . "')");
+    mysqli_query($mysqli, "INSERT INTO `ordered_products`(`order_id`,`product_id`) VALUES ({$id}, {$value['id']})");
 }
 $_SESSION['cart'] = array();
 $mysqli->close();
-// header('Location: index.php');
+header('Location: index.php');
