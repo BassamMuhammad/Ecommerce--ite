@@ -2,19 +2,30 @@
 include_once(".\config.php");
 session_start();
 $skip = false;
-if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+if (isCartEmpty()) {
   $skip = true;
 } else {
   $result = mysqli_query($mysqli, "SELECT * from products");
   $products = array();
   $total = 0;
   while ($res = mysqli_fetch_array($result)) {
-    if (in_array($res['id'], $_SESSION['cart'])) {
-      array_push($products, $res);
-      $total += $res['price'];
+    foreach ($_SESSION['cart'] as $product) {
+      if ($product['id'] === $res['id']) {
+        array_push(
+          $products,
+          ['id' => $product['id'], 'name' => $res['name'], 'quantity' => $product['quantity'], 'imageUrl' => $res['imageUrl']]
+        );
+        $total += $res['price'] * $product['quantity'];
+        break;
+      }
     }
   }
   $mysqli->close();
+}
+
+function isCartEmpty()
+{
+  return !isset($_SESSION['cart']) || empty($_SESSION['cart']);
 }
 
 ?>
@@ -37,34 +48,32 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
       <a class="logo" href="index.php">FastCommerce</a>
     </div>
   </header>
-  <?php
-  if (!$skip) {
-    echo "<div class=\"wrapper\">
-    <main class=\"cart-main\">
-      <h1 class=\"your-cart-h\">Your Cart</h1>
-      <h1 class=\"total-price-h\">Total Cost: $<span>" . $total . "</span></h1>
-      <button type=\"button\" class=\"checkout-btn\" id=\"checkout-btn\">
-        Proceed to Checkout
-      </button>
-      <ul class=\"cart-items-list\">";
-    foreach ($products as $key => $value) {
-      echo "  <li class=\"cart-item\">";
-      echo "    <div class=\"cart-item__image\">";
-      echo "      <img src=" . $value['imageUrl'] . " alt=\"product image\" />";
-      echo "    </div>";
+  <?php if (!$skip) { ?>
+    <div class="wrapper">
+      <main class="cart-main">
+        <h1 class="your-cart-h">Your Cart</h1>
+        <h1 class="total-price-h">Total Cost: $<span><?php echo $total ?></span></h1>
+        <button type="button" class="checkout-btn" id="checkout-btn">
+          Proceed to Checkout
+        </button>
+        <ul class="cart-items-list">
+          <?php foreach ($products as $key => $value) { ?>
+            <li class="cart-item">
+              <div class="cart-item__image">
+                <img src=<?php echo $value['imageUrl'] ?>alt="product image" />
+              </div>
 
-      echo "    <div class=\"cart-item__content\">";
-      echo "      <p class=\"name\">" . $value['name'] . "</p>";
-      echo "      <p class=\"quantity\">Price: $" . $value['price'] . "</p>";
-      echo "      <a href=\"removeFromCart.php?id=" . $value['id'] . "\" class=\"remove-btn\">Remove</a>";
-      echo "    </div>";
-      echo "  </li>";
-    }
-
-    echo "</ul>
-</main>
-</div>";
-  } else {
+              <div class="cart-item__content">
+                <p class="name"> <?php echo $value['name'] ?> </p>
+                <p class="quantity">Quantity: <?php echo $value['quantity'] ?> </p>
+                <a href="removeFromCart.php?id=<?php echo $value['id'] ?>" class="remove-btn">Remove</a>
+              </div>
+            </li>
+          <?php } ?>
+        </ul>
+      </main>
+    </div>
+  <?php } else {
     echo "<h1> Cart is empty :( </h1>";
   }
   ?>
