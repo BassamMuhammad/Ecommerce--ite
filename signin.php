@@ -5,7 +5,7 @@ if (
     'admin123' === $_POST['password']
 ) {
     $_SESSION['user'] = array('admin', 'admin@gmail.com', 2);
-    header('Location: admin.php');
+    header('Location: admin/admin.php');
 } else {
     include_once(".\config.php");
     $result = mysqli_query($mysqli, "Select * from users");

@@ -946,19 +946,6 @@ Add + Edit Product Page Styling
   justify-self: end;
 }
 
-.edit-product-main {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2em;
-  margin: 4em 0;
-}
-.edit-product-main .product-image {
-  max-width: 500px;
-}
-.edit-product-main .edit-product-section {
-  margin: 0;
-}
 .edit-product-main .edit-product-section .product-form-h {
   text-align: left;
 }
