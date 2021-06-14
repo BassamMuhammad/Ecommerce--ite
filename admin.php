@@ -1,6 +1,14 @@
 <?php
+session_start();
 include_once(".\config.php");
-
+if (!isset($_SESSION['user'])) {
+  header('Location: signin.html');
+}
+if (
+  'admin@gmail.com' !== $_SESSION['user'][1]
+) {
+  header('Location: index.php');
+}
 $result = mysqli_query($mysqli, "SELECT * from products");
 ?>
 
@@ -21,32 +29,22 @@ $result = mysqli_query($mysqli, "SELECT * from products");
   <header class="header admin-header">
     <div class="wrapper">
       <nav class="nav">
-        <a class="logo" href="../admin.php">FastCommerce</a>
-        <form action="" class="search-form">
+        <a class="logo" href="admin.php">FastCommerce</a>
+        <form action="adminSearchProduct.php" class="search-form">
           <div class="search-field">
             <input type="text" placeholder="search products" name="product_name" required />
             <button class="submit-btn" type="submit"></button>
           </div>
-          <div>
-            <label for="category">Category</label>
-            <select name="category" id="category">
-              <option value="All">All</option>
-              <option value="Home & Kitchen">Home & Kitchen</option>
-              <option value="Sports">Sports</option>
-              <option value="Electronics">Electronics</option>
-              <option value="Softwares">Softwares</option>
-              <option value="Video Games">Video Games</option>
-              <option value="Books">Books</option>
-            </select>
-          </div>
         </form>
+        <a href="signout.php">Log out</a>
+
       </nav>
     </div>
   </header>
 
   <div class="wrapper">
     <main class="admin-main">
-      <a href="addProduct.php" class="add-product-btn">Add New Product</a>
+      <a href="addProduct.html" class="add-product-btn">Add New Product</a>
       <ul class="products-list products-list-admin">
 
         <?php
