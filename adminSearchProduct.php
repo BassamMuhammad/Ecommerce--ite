@@ -29,24 +29,13 @@ $mysqli->close();
 </head>
 
 <body>
-    <header class="header admin-header">
+    <header class="minimalist-header">
         <div class="wrapper">
-            <nav class="nav">
-                <a class="logo" href="admin.php">FastCommerce</a>
-                <form action="adminSearchProduct.html" class="search-form">
-                    <div class="search-field">
-                        <?php echo "<input type=\"text\" placeholder=\"search products\" name=\"product_name\" required value=\"" . $name . "\"/>"; ?>
-                        <button class="submit-btn" type="submit"></button>
-                    </div>
-                </form>
-                <a href="signout.php" class="signout-btn">Log out</a>
-
-            </nav>
+            <a href="admin.php" class="home-btn">Back to Home</a>
         </div>
     </header>
     <div class="wrapper">
         <main class="admin-main">
-            <a href="addProduct.html" class="add-product-btn">Add New Product</a>
             <section class="product-details">
                 <?php
 
