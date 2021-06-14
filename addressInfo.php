@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once(".\config.php");
-echo "<pre>" . print_r($_SESSION['user']) . "</pre>";
 $result = mysqli_query($mysqli, "SELECT * from users where id='" . $_SESSION['user'][2] . "'");
 ?>
 
@@ -19,52 +18,50 @@ $result = mysqli_query($mysqli, "SELECT * from users where id='" . $_SESSION['us
 </head>
 
 <body>
-
-  <header class="minimalist-header">
-    <div class="wrapper">
-      <a href="index.php" class="home-btn">Back to Home</a>
-    </div>
-  </header>
   <div class="wrapper wrapper-address-page">
+    <header class="minimalist-header">
+      <div class="wrapper">
+        <a href="index.php" class="home-btn">Back to Home</a>
+        <a class="logo" href="index.php">FastCommerce</a>
+      </div>
+    </header>
+
     <main class="address-main">
       <section class="address-section">
         <h1 class="address-h">Address and Contact</h1>
         <form action="handleAddressInfo.php" method="POST" class="address-form">
           <?php
-          while ($res = mysqli_fetch_array($result)) { ?>
-
-            <?php $fullName = empty($res['fullName']) ? '' : $res['fullName'];
-
-            ?>
-            <div>
-              <label for="name">Full Name</label>
-              <input type="text" name="name" id="name" value=<?php echo $res['fullName'] ?> required />
-            </div>
-            <div>
-              <label for="phone_number">Phone Number</label>
-              <input type="tel" name="phone_number" id="phone_number" value=<?php echo $res['phoneNumber'] ?> required />
-            </div>
-            <div>
-              <label for="country">Country</label>
-              <input name="country" id="country" value=<?php echo $res['country'] ?> />
-            </div>
-            <div>
-              <label for="state">State/Province/Region</label>
-              <input type="text" name="state" id="state" value=<?php echo $res['state'] ?> required />
-            </div>
-            <div>
-              <label for="city">City</label>
-              <input type="text" name="city" id="city" value=<?php echo $res['city'] ?> required />
-            </div>
-            <div>
-              <label for="address">Full House Address</label>
-              <input type="text" name="address" id="address" value=<?php echo $res['address'] ?> required />
-            </div>
-            <div>
-              <label for="zip_code">Zip Code</label>
-              <input type="text" name="zip_code" id="zip_code" value=<?php echo $res['zipCode'] ?>required />
-            </div>";
-          <?php }
+          while ($res = mysqli_fetch_array($result)) {
+            $fullName = empty($res['fullName']) ? '' : $res['fullName'];
+            echo "<div>
+            <label for=\"name\">Full Name</label>
+            <input type=\"text\" name=\"name\" id=\"name\"  value=\"" . $res['fullName'] . "\"  required/>
+          </div>
+          <div>
+            <label for=\"phone_number\">Phone Number</label>
+            <input type=\"tel\" name=\"phone_number\" id=\"phone_number\" value=\"" . $res['phoneNumber'] . "\" required />
+          </div>
+          <div>
+            <label for=\"country\">Country</label>
+            <input name=\"country\" id=\"country\" value=\"" . $res['country'] . "\" />
+          </div>
+          <div>
+            <label for=\"state\">State/Province/Region</label>
+            <input type=\"text\" name=\"state\" id=\"state\" value=\"" . $res['state'] . "\" required />
+          </div>
+          <div>
+            <label for=\"city\">City</label>
+            <input type=\"text\" name=\"city\" id=\"city\" value=\"" . $res['city'] . "\" required />
+          </div>
+          <div>
+            <label for=\"address\">Full House Address</label>
+            <input type=\"text\" name=\"address\" id=\"address\" value=\"" . $res['address'] . "\" required />
+          </div>
+          <div>
+            <label for=\"zip_code\">Zip Code</label>
+            <input type=\"text\" name=\"zip_code\" id=\"zip_code\" value=\"" . $res['zipCode'] . "\" required />
+          </div>";
+          }
           ?>
           <input type="submit" class="submit-btn" value="Submit" />
         </form>
