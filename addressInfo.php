@@ -22,7 +22,6 @@ $result = mysqli_query($mysqli, "SELECT * from users where id='" . $_SESSION['us
     <header class="minimalist-header">
       <div class="wrapper">
         <a href="index.php" class="home-btn">Back to Home</a>
-        <a class="logo" href="index.php">FastCommerce</a>
       </div>
     </header>
 

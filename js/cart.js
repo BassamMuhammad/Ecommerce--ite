@@ -1,6 +1,3 @@
-document.querySelector
-
-
 const handleCheckoutButtonClick = function () {
   document.querySelector(".cart-main .cart-items-list li")
     ? (window.location = "addressInfo.php")

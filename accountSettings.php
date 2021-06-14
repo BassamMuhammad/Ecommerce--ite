@@ -22,38 +22,39 @@ if (!isset($_SESSION['user'])) {
   <header class="minimalist-header">
     <div class="wrapper">
       <a href="index.php" class="home-btn">Back to Home</a>
-      <a class="logo" href="index.php">FastCommerce</a>
     </div>
   </header>
 
-  <main class="account-settings-main">
-    <section class="edit-account-section">
-      <form action="changeNameAndEmail.php" method="POST" class="edit-account-form" id="no-password-form">
-        <button type="button" class="edit-btn">Edit</button>
-        <div>
-          <label for="name">Name</label>
-          <?php echo " <input type=\"text\" name=\"name\" id=\"name\" value=\"" . $_SESSION['user'][0] . "\" disabled />"; ?>
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <?php echo "<input type=\"email\" name=\"email\" id=\"email\" value=\"" . $_SESSION['user'][1] . "\" disabled />"; ?>
-        </div>
-        <input type="submit" class="submit-btn submit-btn--disabled" value="Save" disabled />
+  <div class="wrapper">
+    <main class="account-settings-main">
+      <section class="edit-account-section">
+        <form action="changeNameAndEmail.php" method="POST" class="edit-account-form" id="no-password-form">
+          <button type="button" class="edit-btn">Edit</button>
+          <div>
+            <label for="name">Name</label>
+            <?php echo " <input type=\"text\" name=\"name\" id=\"name\" value=\"" . $_SESSION['user'][0] . "\" disabled />"; ?>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <?php echo "<input type=\"email\" name=\"email\" id=\"email\" value=\"" . $_SESSION['user'][1] . "\" disabled />"; ?>
+          </div>
+          <input type="submit" class="submit-btn submit-btn--disabled" value="Save" disabled />
 
-      </form>
+        </form>
 
-      <form action="changePassword.php" method="POST" class="edit-account-form change-password-form">
-        <button type="button" class="edit-btn change-password-btn">
-          Change Password
-        </button>
-        <div>
-          <input type="password" name="old_password" id="old_password" placeholder="Enter old password" disabled required />
-          <input type="password" name="new_password" id="new_password" placeholder="Enter new password" disabled required />
-        </div>
-        <input type="submit" value="Change" class="submit-btn submit-btn--disabled" disabled />
-      </form>
-    </section>
-  </main>
+        <form action="changePassword.php" method="POST" class="edit-account-form change-password-form">
+          <button type="button" class="edit-btn change-password-btn">
+            Change Password
+          </button>
+          <div>
+            <input type="password" name="old_password" id="old_password" placeholder="Enter old password" disabled required />
+            <input type="password" name="new_password" id="new_password" placeholder="Enter new password" disabled required />
+          </div>
+          <input type="submit" value="Change" class="submit-btn submit-btn--disabled" disabled />
+        </form>
+      </section>
+    </main>
+  </div>
 
   <footer>
     <div class="wrapper footer-grid">
