@@ -3,7 +3,7 @@ include_once(".\config.php");
 session_start();
 $skip = false;
 if (!isset($_SESSION['favourite']) || empty($_SESSION['favourite'])) {
-  echo "<h1> Favourites is empty :( </h1>";
+  // echo "<h1> Favourites is empty :( </h1>";
   $skip = true;
 } else {
   $result = mysqli_query($mysqli, "SELECT * from products");
@@ -36,12 +36,15 @@ if (!isset($_SESSION['favourite']) || empty($_SESSION['favourite'])) {
 <body>
   <header class="minimalist-header">
     <div class="wrapper">
-      <a href="index.php" class="home-btn">Back to Home</a>
-      <a class="logo" href="index.php">FastCommerce</a>
+      <div class="wrapper">
+        <a href="index.php" class="home-btn">Back to Home</a>
+      </div>
     </div>
   </header>
   <?php
-  if (!$skip) {
+  if ($skip) {
+    echo "<h1> Favourites is empty :( </h1>";
+  } else {
     echo "<div class=\"wrapper\">
     <main class=\"favourites-main\">
       <h1 class=\"favourites-h\">Your Favourites</h1>
