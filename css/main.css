@@ -266,20 +266,6 @@ footer a {
 /*==============================
         Products List Styling
 ===============================*/
-.admin-main .add-product-btn {
-  border: none;
-  background-color: #007e00;
-  border-radius: 2px;
-  color: white;
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
-  padding-left: 2em;
-  padding-right: 2em;
-  text-align: center;
-  width: fit-content;
-  margin: 2em auto 0 auto;
-}
-
 .products-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -346,6 +332,42 @@ footer a {
   text-align: center;
 }
 .products-list-admin .product .edit-btn {
+  border: none;
+  background-color: #2e2d2d;
+  border-radius: 2px;
+  color: white;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: center;
+}
+
+.admin-main .add-product-btn {
+  border: none;
+  background-color: #007e00;
+  border-radius: 2px;
+  color: white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+  width: fit-content;
+  margin: 2em auto 0 auto;
+}
+.admin-main .remove-btn {
+  border: none;
+  background-color: #c72424;
+  border-radius: 2px;
+  color: white;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: center;
+}
+.admin-main .edit-btn {
   border: none;
   background-color: #2e2d2d;
   border-radius: 2px;
@@ -1002,14 +1024,8 @@ Add + Edit Product Page Styling
     margin-left: 0.5em;
   }
 
-  .admin-header .nav {
-    display: block;
-  }
   .admin-header .nav .search-form {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 1em;
+    display: block;
   }
   .admin-header .nav .search-form input {
     display: block;
@@ -1071,11 +1087,18 @@ Add + Edit Product Page Styling
     width: 25px;
   }
 
+  .admin-header .nav {
+    flex-direction: column;
+  }
+  .admin-header .nav .signout-btn {
+    width: fit-content;
+    margin: 0.5em 0 0 auto;
+  }
   .admin-header .nav .search-form {
-    text-align: center;
-    grid-template-columns: 1fr;
-    width: initial;
-    grid-gap: 0.5em;
+    width: 100%;
+  }
+  .admin-header .nav .search-form input {
+    padding: 0.4em 0.5em 0.4em 3.5em;
   }
 
   footer .footer-grid {
@@ -1164,6 +1187,11 @@ Add + Edit Product Page Styling
 .edit-product-section .product-form-h {
     text-align: left;
     font-size: 2.5rem;
+  }
+
+  .admin-main .product-details__cta-btns {
+    grid-template-columns: 1fr;
+    grid-gap: 0.4em;
   }
 }
 @media (max-width: 260px) {

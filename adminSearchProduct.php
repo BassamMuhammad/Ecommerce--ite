@@ -39,7 +39,7 @@ $mysqli->close();
                         <button class="submit-btn" type="submit"></button>
                     </div>
                 </form>
-                <a href="signout.php">Log out</a>
+                <a href="signout.php" class="signout-btn">Log out</a>
 
             </nav>
         </div>
@@ -59,7 +59,7 @@ $mysqli->close();
                     echo "    <p class=\"product-details__content__name\">" . $res['name'] . "</p>";
                     echo "    <p class=\"product-details__content__price\">$" . $res['price'] . "</p>";
                     echo "  </div>";
-                    echo " <div id=" . $res['id'] . " class=\"product__details__cta-btns\">";
+                    echo " <div id=" . $res['id'] . " class=\"product-details__cta-btns\">";
                     echo " <a  href=\"deleteProduct.php?id=" . $res['id'] . "\" class=\"remove-btn\">Remove</a>";
                     echo "<a href=\"editProduct.php?id=" . $res['id'] . "\" class=\"edit-btn\">Edit</a>";
                     echo "   </div>";

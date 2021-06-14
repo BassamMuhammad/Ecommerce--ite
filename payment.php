@@ -14,4 +14,4 @@ foreach ($_SESSION['cart'] as $value) {
 }
 $_SESSION['cart'] = array();
 $mysqli->close();
-header('Location: index.php');
+// header('Location: index.php');
