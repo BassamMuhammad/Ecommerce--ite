@@ -18,13 +18,13 @@ $result = mysqli_query($mysqli, "SELECT * from users where id='" . $_SESSION['us
 </head>
 
 <body>
+  <header class="minimalist-header">
+    <div class="wrapper">
+      <a href="index.php" class="home-btn">Back to Home</a>
+    </div>
+  </header>
+  
   <div class="wrapper wrapper-address-page">
-    <header class="minimalist-header">
-      <div class="wrapper">
-        <a href="index.php" class="home-btn">Back to Home</a>
-      </div>
-    </header>
-
     <main class="address-main">
       <section class="address-section">
         <h1 class="address-h">Address and Contact</h1>
